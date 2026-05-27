@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Right Truck Fit — Auto Parts</title>
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/auto.css" />
+</head>
+<body>
+  <div class="grain"></div>
+
+  <div class="container">
+    <header class="header">
+      <div class="brand">
+        <div class="brand-mark"><img src="./assets/images/logo.png" alt="Logo"></div>
+        <h1 class="headline"><em>Right Truck Fit</em></h1>
+        <span class="brand-text">Auto Parts · Bin-Packed</span>
+        <nav class="mode-nav">
+          <a href="index.html" class="mode-link">Pallets</a>
+          <a href="auto.html" class="mode-link mode-link--active">Auto Parts</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="input-card input-card--auto">
+      <!-- LEFT: category -> SKU picker -->
+      <div class="input-section input-section--left">
+        <label class="input-label">1 · Select Category</label>
+        <div id="cat-tabs"></div>
+
+        <label class="input-label" style="margin-top:18px;">2 · Select Item &amp; Quantity</label>
+        <div id="sku-list" class="sku-list-wrap"></div>
+      </div>
+
+      <!-- RIGHT: distance + shipment + actions -->
+      <div class="input-section">
+        <label class="input-label">3 · Enter Distance</label>
+        <div class="big-input-wrap">
+          <input id="distance-input" type="number" class="big-input" placeholder="0" min="0" />
+          <span class="big-input-unit">KM</span>
+        </div>
+        <div id="distance-hint"></div>
+
+        <label class="input-label" style="margin-top:24px;">Your Shipment</label>
+        <div id="shipment-summary"></div>
+
+        <div class="actions">
+          <button id="calc-btn" class="btn-primary" disabled><span>CALCULATE</span><span>→</span></button>
+          <button id="reset-btn" class="btn-link" style="display:none;"><span>✕</span><span>RESET</span></button>
+        </div>
+      </div>
+    </section>
+
+    <div id="results"></div>
+    <footer class="footer"></footer>
+  </div>
+
+  <!-- Data -->
+  <script src="data/trucks.js"></script>
+  <script src="data/distanceClasses.js"></script>
+  <script src="data/pricing.js"></script>
+  <script src="data/autoSkus.js"></script>
+  <!-- Logic -->
+  <script src="logic/pricing.js"></script>
+  <script src="logic/autoPacking.js"></script>
+  <!-- Component -->
+  <script src="components/autoApp.js"></script>
+</body>
+</html>

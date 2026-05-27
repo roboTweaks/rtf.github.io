@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Right Truck Fit Calculator</title>
+  <link rel="stylesheet" href="styles/main.css" />
+</head>
+<body>
+  <div class="grain"></div>
+
+  <div class="container">
+    <!-- HEADER -->
+    <header class="header">
+      <div class="brand">
+        <div class="brand-mark">
+          <img src="./assets/images/logo.png" alt="Logo">
+      
+      <h1 class="headline">
+        <em>
+          Right Truck Fit
+        </em>    
+      </h1>
+
+    <span class="brand-text">Freight Optimizer</span>
+    <nav class="mode-nav">
+      <a href="index.html" class="mode-link mode-link--active">Pallets</a>
+      <a href="auto.html" class="mode-link">Auto Parts</a>
+    </nav>
+    </header>
+
+    <!-- INPUT FORM -->
+    <section class="input-card">
+      <div class="input-section input-section--left">
+        <div class="input-header-row">
+          <label class="input-label">Select Pallet Type</label>
+          <label class="toggle-switch" title="Pack each truck to its absolute maximum (base + extra), instead of the operationally loaded count.">
+            <input type="checkbox" id="max-efficiency-toggle">
+            <span class="toggle-slider"></span>
+            <span class="toggle-label">MAX. EFFICIENCY</span>
+          </label>
+        </div>
+        <div id="pallet-picker"></div>
+      </div>
+
+      <div class="input-section">
+        <div class="inputs-row">
+          <div>
+            <label class="input-label">Enter Quantity</label>
+            <div class="big-input-wrap">
+              <input id="quantity-input" type="number" class="big-input" placeholder="0" min="1" />
+              <span class="big-input-unit">PALLETS</span>
+            </div>
+          </div>
+          <div>
+            <label class="input-label">Enter Distance</label>
+            <div class="big-input-wrap">
+              <input id="distance-input" type="number" class="big-input" placeholder="0" min="0" />
+              <span class="big-input-unit">KM</span>
+            </div>
+            <div id="distance-hint"></div>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="calc-btn" class="btn-primary" disabled>
+            <span>CALCULATE</span>
+            <span>→</span>
+          </button>
+          <button id="reset-btn" class="btn-link" style="display:none;">
+            <span>✕</span>
+            <span>RESET</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- RESULTS -->
+    <div id="results"></div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+    <!--  <div>ALL-INCLUSIVE RATES · DRIVER + FUEL + MAINTENANCE</div>
+      <div>3 PALLETS · 10 TRUCKS · 3 RATE CATEGORIES</div>
+      -->
+    </footer>
+  </div>
+
+  <!--
+    Scripts load in order. Each file attaches things to window.App.
+    No imports, no modules, no build step. Just plain JS.
+
+    To add a new truck: edit data/trucks.js + data/loadMatrix.js + data/pricing.js
+    To change rates:    edit data/pricing.js
+    To change distance rules: edit data/distanceClasses.js
+  -->
+
+  <!-- Data layer (load first) -->
+  <script src="data/trucks.js"></script>
+  <script src="data/pallets.js"></script>
+  <script src="data/distanceClasses.js"></script>
+  <script src="data/pricing.js"></script>
+  <script src="data/loadMatrix.js"></script>
+
+  <!-- Logic -->
+  <script src="logic/pricing.js"></script>
+  <script src="logic/recommend.js"></script>
+
+  <!-- Components -->
+  <script src="components/render.js"></script>
+  <script src="components/truckCard.js"></script>
+  <script src="components/app.js"></script>
+</body>
+</html>
