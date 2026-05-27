@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <rect width="200" height="200" fill="#ebe8e0"/>
+  <rect x="50" y="60" width="100" height="80" fill="none" stroke="#960609" stroke-width="3" stroke-dasharray="6 4"/>
+  <line x1="50" y1="60" x2="150" y2="140" stroke="#c4c0b8" stroke-width="1.5"/>
+  <line x1="150" y1="60" x2="50" y2="140" stroke="#c4c0b8" stroke-width="1.5"/>
+  <text x="100" y="170" font-family="sans-serif" font-size="13" fill="#8a8a8a" text-anchor="middle">part image</text>
+</svg>
